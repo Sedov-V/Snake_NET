@@ -8,14 +8,13 @@ namespace Snake
 {
     class Snake : Figure
     {
-        private int startLength = 0;
-        public int Score => pList.Count - startLength;
+        public int score;
 
         Direction direction;
 
         public Snake(Point tail, int length, Direction _direction)
         {
-            startLength = length;
+            score = 0;
             direction = _direction;
             pList = new List<Point>();
             for (int i = 0; i < length; i++)
@@ -75,6 +74,7 @@ namespace Snake
             {
                 food.sym = head.sym;
                 pList.Add(food);
+                score += 10;
                 return true;
             }
             else

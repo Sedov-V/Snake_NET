@@ -10,7 +10,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            //Console.SetBufferSize( 80, 25 );
+            Console.SetWindowSize(80, 27);
 
             Walls walls = new Walls(80, 25);
             walls.Draw();
@@ -27,7 +27,7 @@ namespace Snake
             // Цикл игры
             while (true)
             {
-                WriteScore(snake.Score);
+                WriteScore(snake.score);
 
                 if (walls.IsHit(snake) || snake.IsHitTail())
                 {
@@ -38,6 +38,7 @@ namespace Snake
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
+                    snake.Draw();
                 }
                 else
                 {
