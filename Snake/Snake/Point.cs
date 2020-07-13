@@ -32,7 +32,7 @@ namespace Snake
         {
             switch (direction)
             {
-                case Direction.DOWN: 
+                case Direction.DOWN:
                     y -= offset;
                     break;
                 case Direction.LEFT:
@@ -45,6 +45,12 @@ namespace Snake
                     y += offset;
                     break;
             }
+        }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
 
         public void Draw()
